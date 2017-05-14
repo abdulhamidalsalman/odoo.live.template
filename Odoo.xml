@@ -1,0 +1,363 @@
+<templateSet group="Odoo">
+  <template name="odoo_form" value="&lt;record id=&quot;view_form_id&quot; model=&quot;ir.ui.view&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;&lt;/field&gt;&#10;    &lt;field name=&quot;model&quot;&gt;&lt;/field&gt;&#10;    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &lt;form string=&quot;&quot;&gt;&#10;            &lt;header&gt;&#10;                &lt;!-- Buttons go here--&gt;&#10;                &lt;button name=&quot;do_toggle_done&quot; type=&quot;object&quot; string=&quot;Toggle Done&quot; class=&quot;oe_highlight&quot; /&gt;&#10;            &lt;/header&gt;&#10;            &lt;sheet&gt;&#10;                &lt;!-- Content goes here: --&gt;&#10;                 &lt;group name=&quot;group_top&quot;&gt;&#10;                    &lt;group name=&quot;group_left&quot;&gt;&#10;                        &lt;field name=&quot;name&quot;/&gt;&#10;                    &lt;/group&gt;&#10;                    &lt;group name=&quot;group_right&quot;&gt;&#10;                        &lt;field name=&quot;is_done&quot;/&gt;&#10;                        &lt;field name=&quot;active&quot; readonly=&quot;1&quot;/&gt;&#10;                    &lt;/group&gt;&#10;                &lt;/group&gt;&#10;            &lt;/sheet&gt;&#10;        &lt;/form&gt;&#10;    &lt;/field&gt;&#10;&lt;/record&gt;" description="Create Form View" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_tree" value="&lt;record id=&quot;view_tree_id&quot; model=&quot;ir.ui.view&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;&lt;/field&gt;&#10;    &lt;field name=&quot;model&quot;&gt;&lt;/field&gt;&#10;    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &lt;!-- colors attribute uses bootsrap classs --&gt;&#10;        &lt;tree  colors=&quot;decoration-muted:is_done==True&quot; string=&quot;&quot;&gt;&#10;            &lt;field name=&quot;name&quot;/&gt;&#10;        &lt;/tree&gt;&#10;    &lt;/field&gt;&#10;&lt;/record&gt;" description="Create Tree View" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_data" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;odoo&gt;&#10;    &lt;data&gt;&#10;        &#10;        &#10;    &#10;    &lt;/data&gt;&#10;&lt;/odoo&gt;" description="Create the main tags" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_form_inherit" value="&lt;!-- Inherit Form View to Modify it --&gt;&#10;&lt;record id=&quot;&quot; model=&quot;ir.ui.view&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;&lt;/field&gt;&#10;    &lt;field name=&quot;model&quot;&gt;&lt;/field&gt;&#10;    &lt;field name=&quot;inherit_id&quot; ref=&quot;&quot;/&gt;&#10;    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &#10;        &lt;xpath expr=&quot;//field[@name='name']&quot; position=&quot;&quot;&gt;&#10;            &lt;!-- Add your fields or attributes here --&gt;&#10;        &lt;/xpath&gt;&#10;        &#10;    &lt;/field&gt;&#10;&lt;/record&gt;" description="Inherit Existing Form View" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_tree_inherit" value="&lt;record id=&quot;&quot; model=&quot;ir.ui.view&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;&lt;/field&gt;&#10;    &lt;field name=&quot;model&quot;&gt;&lt;/field&gt;&#10;    &lt;field name=&quot;inherit_id&quot; ref=&quot;&quot;/&gt;&#10;    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &#10;        &lt;xpath expr=&quot;//field[@name='name']&quot; position=&quot;&quot;&gt;&#10;            &lt;!-- Add new fields here --&gt;&#10;        &lt;/xpath&gt;&#10;        &#10;    &lt;/field&gt;&#10;&lt;/record&gt;" description="Inherit Existing Tree View" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_view_action" value="&lt;record id=&quot;&quot; model=&quot;ir.actions.act_window&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;&lt;/field&gt;&#10;    &lt;field name=&quot;type&quot;&gt;ir.actions.act_window&lt;/field&gt;&#10;    &lt;field name=&quot;res_model&quot;&gt;&lt;/field&gt;&#10;    &lt;field name=&quot;view_mode&quot;&gt;tree,form&lt;/field&gt;&#10;    &lt;field name=&quot;help&quot; type=&quot;html&quot;&gt;&#10;      &lt;p class=&quot;oe_view_nocontent_create&quot;&gt;&#10;        &lt;!-- Add Text Here --&gt;&#10;      &lt;/p&gt;&lt;p&gt;&#10;        &lt;!-- More details about what a user can do with this object will be OK --&gt; &#10;      &lt;/p&gt;&#10;    &lt;/field&gt;&#10;&lt;/record&gt;" description="Create new Action" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_menuitem_root" value="&lt;!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action --&gt;&#10;&lt;menuitem id=&quot;MODULE_NAME_root&quot; name=&quot;&quot; sequence=&quot;&quot;/&gt;" description="Create New Menu Item in the Upper bar" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_menuitem_categ" value="&lt;!-- This Menu Item Must have a parent --&gt;&#10;&lt;menuitem id=&quot;UNIQUE_ID_categ&quot; name=&quot;&quot; parent=&quot;&quot; sequence=&quot;&quot;/&gt;" description="Create New Menu Item for Categroization" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_menuitem_action" value="&lt;!-- This Menu Item must have a parent and an action --&gt;&#10;&lt;menuitem id=&quot;UNIQUE_ID_categ&quot; name=&quot;&quot; parent=&quot;&quot; action=&quot;&quot; sequence=&quot;&quot;/&gt;" description="Create New Menu Item for Actions" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_nested_group" value="&lt;group string=&quot;&quot;&gt;&#10;    &lt;group&gt;&#10;        &lt;field name=&quot;&quot;/&gt;&#10;    &lt;/group&gt;&#10;    &lt;group&gt;&#10;        &lt;field name=&quot;&quot;/&gt;&#10;    &lt;/group&gt;&#10;&lt;/group&gt;" description="Create Nested Groups" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_domain" value="domain=&quot;[('', '=', ), ]&quot;" description="Add domain to your field" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_model" value="# -*- coding: utf-8 -*-&#10;from odoo import api, fields, models &#10;&#10;class NewModule(models.Model):&#10;    #most important attribute is _name which is required and defines the name for the model in the Odoo system&#10;    _name = 'model.name' # Model identifer used for table name&#10;    _rec_name = 'name'&#10;    _description = 'model description'&#10;    active = fields.Boolean('Active?', default=True)&#10;    &#10;    &#10;    name = fields.Char(&#10;        string=&quot;Name&quot;,                   # Optional label of the field&#10;        compute=&quot;_compute_name_custom&quot;,  # Transform the fields in computed fields&#10;        store=True,                      # If computed it will store the result&#10;        select=True,                     # Force index on field&#10;        readonly=True,                   # Field will be readonly in views&#10;        inverse=&quot;_write_name&quot;            # On update trigger&#10;        required=True,                   # Mandatory field&#10;        translate=True,                  # Translation enable&#10;        help='blabla',                   # Help tooltip text&#10;        company_dependent=True,          # Transform columns to ir.property&#10;        search='_search_function'        # Custom search function mainly used with compute&#10;    )&#10;&#10;   # The string key is not mandatory&#10;   # by default it wil use the property name Capitalized&#10;&#10;    #variable type&#10;    abool = fields.Boolean()&#10;    achar = fields.Char()&#10;    atext = fields.Text() # stores long text&#10;    ahtml = fields.Html() #stores HTML&#10;    aint = fields.Integer()&#10;    afloat = fields.Float() #parameter can be a tuple (int len, float len)&#10;    adate = fields.Date()&#10;    bdate = fields.Date.today()&#10;    cdate = fields.Date.context_tody(self, timestamp=datetime.datetime.now())&#10;    ddate = fields.Date.from_string(fields.Date.today()) &#10;    edate = fields.Date.to_string(datetime.datetime.today())#to_string returns date string from datetime.date&#10;    &#10;    abin = fields.Binary()&#10;    &#10;    aselection = fields.Selection([('a', 'A')])&#10;    aselection = fields.Selection(selection=[('a', 'A')])&#10;    aselection = fields.Selection(selection='a_function_name') #a_function_name returns a list of tuples&#10;&#10;    &#10;    @api.one&#10;    def dangerous_write(self):&#10;        self.x = 1&#10;        self.y = 2&#10;        self.z = 4&#10;&#10;    def better_write(self):&#10;        for rec in self:&#10;            rec.write({'x': 1, 'y': 2, 'z': 4})&#10;    # or&#10;    def best_write(self):&#10;        # same value on all records&#10;        self.write({'x': 1, 'y': 2, 'z': 4})&#10;    &#10;    #create() Takes a number of field values, and returns a recordset containing the record created:&#10;         &#10;    # To access environment    &#10;    def afun(self):&#10;        self.env&#10;        # or&#10;        #model.env&#10;        &#10;    # modify envirnoment&#10;    def modifyEnv(self):&#10;        self.env['res.partner'].with_context(tz=x).create(vals)&#10;        &#10;    &#10;    def userOperations(self):&#10;        #access current user&#10;        self.env.user&#10;        &#10;        #change user&#10;        self.sudo(user.id)&#10;        self.sudo() # This will use the SUPERUSER_ID by default&#10;        # or&#10;        self.env['res.partner'].sudo().create(vals)&#10;        &#10;    def recordOperations(self):&#10;        #Fetching record using XML id&#10;        self.env.ref('base.main_company')&#10;        &#10;        #Cleaning Environment Caches&#10;        self.env.invalidate_all()&#10;        &#10;        #search function returns list of matching ids&#10;        self.search([('is_company', '=', True)]) &#10;        self.env['res.users'].search([('login', '=', 'admin')])&#10;    &#10;        #search_read returns a list of dict&#10;        self.search_read([], ['name'])&#10;        &#10;        # search_count function returns the count of results matching search domain&#10;        self.search_count([('is_company', '=', True)])&#10;        &#10;        #Browsing is the standard way to obtain Records from the database. &#10;        self.browse([1, 2, 3])&#10;        &#10;    #access cursor    &#10;    def my_fun(self):&#10;        cursor = self._cr&#10;        # or&#10;        self.env.cr&#10;        &#10;    #Many2one&#10;    &#10;    &#10;    #one2many&#10;    &#10;    #many2many" description="Create New Odoo model" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_field_integer" value="new_field = fields.Integer(string=&quot;&quot;, required=False, )" description="Add new field of type Integer" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_field_char" value="new_field = fields.Char(string=&quot;&quot;, required=False, )" description="Add new field of type Char" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_field_text" value="new_field = fields.Text(string=&quot;&quot;, required=False, )" description="Add new field of type Text" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_field_many2one" value="new_field_id = fields.Many2one(comodel_name=&quot;&quot;, string=&quot;&quot;, required=False, )" description="Add new field of type Many2one" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_field_one2many" value="new_field_ids = fields.One2many(comodel_name=&quot;&quot;, inverse_name=&quot;&quot;, string=&quot;&quot;, required=False, )" description="Add new field of type One2many" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_field_boolean" value="is_new_field = fields.Boolean(string=&quot;&quot;,  )" description="Add new field of type Boolean" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_field_html" value="new_field = fields.HTML(string=&quot;&quot;,  )" description="Add new field of type HTML" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_field_float" value="new_field = fields.Float(string=&quot;&quot;,  required=False, )" description="Add new field of type Float" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_field_date" value="new_field = fields.Date(string=&quot;&quot;, required=False, )" description="Add new field of type Date" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_field_datetime" value="new_field = fields.Datetime(string=&quot;&quot;, required=False, )" description="Add new field of type DateTime" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_field_selection" value="state = fields.Selection(string=&quot;&quot;, selection=[('', ''), ('', ''), ], required=False, )" description="Add new field of type Selection" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_field_many2many" value="new_field_ids = fields.Many2many(comodel_name=&quot;&quot;, relation=&quot;&quot;, column1=&quot;&quot;, column2=&quot;&quot;, string=&quot;&quot;, )" description="Add new field of type Many2many" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_model_inherit" value="# -*- coding: utf-8 -*-&#10;from odoo import api, fields, models &#10;&#10;class NewModule(models.Model):&#10;    #most important attribute is _name which is required and defines the name for the model in the Odoo system&#10;    _name = 'new_module.new_module'&#10;    _inherit = 'new_module.new_module'&#10;&#10;&#10;    #field inheretance:- One of the new features of the API is to be able to change only one attribute of the field:&#10;    name = fields.Char(string='New Value')&#10;    &#10;    # in inheretance add selection field values use selection_add keyword&#10;    type = fields.Selection(selection_add=[('b', 'B'), ('c', 'C')])" description="Inherit/Extend Existing Odoo model" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_security_category" value="&lt;record id=&quot;&quot; model=&quot;ir.module.category&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;&lt;/field&gt;&#10;    &lt;field name=&quot;sequence&quot; eval=&quot;1&quot;/&gt;&#10;&lt;/record&gt;" description="Add new Security Category" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_security_group" value="&lt;record id=&quot;&quot; model=&quot;res.groups&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;&lt;/field&gt;&#10;    &lt;field name=&quot;category_id&quot; ref=&quot;&quot;/&gt;&#10;    &lt;field name=&quot;implied_ids&quot; eval=&quot;[(4, ref('base.group_user'))]&quot;/&gt;&#10;&lt;/record&gt;" description="Create new Group, then assign new permissions" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_security_rule" value="&lt;record id=&quot;&quot; model=&quot;ir.rule&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;&lt;/field&gt;&#10;    &lt;field ref=&quot;model_name_of_model&quot; name=&quot;model_id&quot;/&gt;&#10;    &lt;field name=&quot;domain_force&quot;&gt;[('', '', )]&lt;/field&gt;&#10;    &lt;field name=&quot;perm_write&quot; eval=&quot;1&quot;/&gt;&#10;    &lt;field name=&quot;perm_create&quot; eval=&quot;1&quot;/&gt;&#10;    &lt;field name=&quot;perm_read&quot; eval=&quot;1&quot;/&gt;&#10;    &lt;field name=&quot;perm_unlink&quot; eval=&quot;1&quot;/&gt;&#10;    &lt;!-- You can attach this rule to a specific group, Or make it Global --&gt;&#10;    &lt;field name=&quot;groups&quot; eval=&quot;[(4, ref('group_id'))]&quot;/&gt;&#10;    &lt;!--&lt;field name=&quot;global&quot; eval=&quot;1&quot;/&gt; --&gt;&#10;&lt;/record&gt;" description="Create new Security Rules" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_notebook" value="&lt;notebook&gt;&#10;    &lt;page string=&quot;&quot;&gt;&#10;        &lt;group&gt;&#10;            &lt;field name=&quot;&quot;/&gt;&#10;        &lt;/group&gt;&#10;    &lt;/page&gt;&#10;&lt;/notebook&gt;" description="Add Notebook and a page" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_page" value="&lt;page string=&quot;&quot;&gt;&#10;    &lt;group&gt;&#10;        &lt;field name=&quot;&quot;/&gt;&#10;    &lt;/group&gt;&#10;&lt;/page&gt;" description="Add new page" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_field_binary" value="new_field = fields.Binary(string=&quot;&quot;,  )" description="Add new field of type Binary" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_wkf" value="&lt;record id=&quot;&quot; model=&quot;workflow&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;&lt;/field&gt;&#10;    &lt;field name=&quot;osv&quot;&gt;&lt;/field&gt;&#10;    &lt;field name=&quot;on_create&quot;&gt;True&lt;/field&gt;&#10;&lt;/record&gt;" description="Add Workflow" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_wkf_transition" value="&lt;record id=&quot;&quot; model=&quot;workflow.transition&quot;&gt;&#10;    &lt;field name=&quot;act_from&quot; ref=&quot;&quot;/&gt;&#10;    &lt;field name=&quot;act_to&quot; ref=&quot;&quot;/&gt;&#10;    &lt;field name=&quot;signal&quot;&gt;&lt;/field&gt;&#10;&lt;/record&gt;" description="Add new Transition to an existing Workflow" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_wkf_activity" value="&lt;record id=&quot;&quot; model=&quot;workflow.activity&quot;&gt;&#10;    &lt;field name=&quot;wkf_id&quot; ref=&quot;&quot;/&gt;&#10;    &lt;!--&lt;field name=&quot;flow_start&quot;&gt;True&lt;/field&gt;--&gt;&#10;    &lt;!--&lt;field name=&quot;flow_stop&quot;&gt;True&lt;/field&gt;--&gt;&#10;    &lt;field name=&quot;name&quot;&gt;&lt;/field&gt;&#10;    &lt;field name=&quot;kind&quot;&gt;function&lt;/field&gt;&#10;    &lt;field name=&quot;action&quot;&gt;METHOD_NAME()&lt;/field&gt;&#10;&lt;/record&gt;" description="Add new Activity" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_form_header" value="&lt;header&gt;&#10;    &lt;button name=&quot;&quot; string=&quot;&quot; class=&quot;oe_highlight&quot; states=&quot;&quot; type=&quot;&quot;/&gt;&#10;    &lt;field name=&quot;state&quot; widget=&quot;statusbar&quot; statusbar_visible=&quot;&quot; statusbar_colors=&quot;{'KEY_IS_STATE':'VALUE_IS_COLOR'}&quot;/&gt;&#10;&lt;/header&gt;" description="Add Form's header with 'state' and buttons" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_form_social" value="&lt;div class=&quot;oe_chatter&quot;&gt;&#10;    &lt;field name=&quot;message_follower_ids&quot; widget=&quot;mail_followers&quot;/&gt;&#10;    &lt;field name=&quot;message_ids&quot; widget=&quot;mail_thread&quot;/&gt;&#10;&lt;/div&gt;" description="Add Social Messaging and followers." toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_form_title" value="&lt;div class=&quot;oe_title&quot;&gt;&#10;    &lt;label for=&quot;name&quot; class=&quot;oe_edit_only&quot;/&gt;&#10;    &lt;h1&gt;&#10;        &lt;field name=&quot;name&quot; placeholder=&quot;......&quot;/&gt;&#10;    &lt;/h1&gt;&#10;&lt;/div&gt;" description="Add title for the form view" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_method_onchange" value="@api.onchange('FIELD_NAME')&#10;def _onchange_FIELD_NAME(self):&#10;    pass" description="Add an onchange method" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_method_compute_field" value="@api.one&#10;@api.depends('FIELDS_NAMES')&#10;def _compute_amount(self):&#10;    &quot;&quot;&quot;&#10;    @api.depends() should contain all fields that will be used in the calculations.&#10;    &quot;&quot;&quot;&#10;    pass" description="Add a method to compute the computed fields" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_qweb_reports" value="&lt;!-- QWeb Reports --&gt;&#10;&lt;!-- NAME &amp; FILE_NAME should be the same --&gt;&#10;        &lt;report&#10;            id=&quot;UNIQUE_REPORT_ID&quot;&#10;            model=&quot;MODEL_WHERE_THE_REPORT_WILL_BE_PRINTED&quot;&#10;            report_type=&quot;qweb-pdf&quot;&#10;            string=&quot;LABEL&quot;&#10;            name=&quot;NAME&quot;&#10;            file=&quot;FILE_NAME&quot;&#10;        /&gt;" description="Add a declaration for new QWeb reports" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template name="odoo_qweb_template" value="&lt;template id=&quot;UNIQUE_ID&quot;&gt;&#10;    &lt;t t-call=&quot;report.html_container&quot;&gt;&#10;        &lt;t t-call=&quot;report.internal_layout&quot;&gt;&#10;        &lt;!-- &lt;t t-call=&quot;report.external_layout&quot;&gt; --&gt;&#10;            &lt;div class=&quot;page&quot;&gt;&#10;                &lt;h2&gt;TITLE FOR YOUR REPORT&lt;/h2&gt;&#10;                &lt;!--&#10;                Build your report here!&#10;                Do it in awesome way ;)&#10;                --&gt;&#10;            &lt;/div&gt;&#10;        &lt;/t&gt;&#10;    &lt;/t&gt;&#10;&lt;/template&gt;&#10;&#10;" description="Add the main structure of the QWeb Reports" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_qweb_table" value="&lt;table class=&quot;table table-condensed&quot;&gt;&#10;    &lt;thead&gt;&#10;        &lt;tr&gt;&#10;            &lt;th&gt;HEAD_1&lt;/th&gt;&#10;            &lt;th class=&quot;text-right&quot;&gt;HEAD_2&lt;/th&gt;&#10;            &lt;th class=&quot;text-right&quot;&gt;HEAD_3&lt;/th&gt;&#10;            &lt;th class=&quot;text-right&quot;&gt;HEAD_4&lt;/th&gt;&#10;        &lt;/tr&gt;&#10;    &lt;/thead&gt;&#10;    &lt;tbody&gt;&#10;        &lt;tr t-foreach=&quot;o.OBJECTS&quot; t-as=&quot;OBJECT&quot;&gt;&#10;            &lt;t t-if=&quot;len(taxline['level']) &gt; 5&quot;&gt;&#10;                &lt;t t-set=&quot;style&quot; t-value=&quot;'font-weight:normal;'&quot;/&gt;&#10;            &lt;/t&gt;&#10;            &lt;t t-if=&quot;not len(taxline['level']) &gt; 5&quot;&gt;&#10;                &lt;t t-set=&quot;style&quot; t-value=&quot;'font-weight:bold;'&quot;/&gt;&#10;            &lt;/t&gt;&#10;&#10;            &lt;td&gt;&#10;                &lt;span t-att-style=&quot;style&quot; t-esc=&quot;taxline['level']&quot; style=&quot;color:white;&quot;/&gt;&#10;                &lt;span t-att-style=&quot;style&quot; t-if=&quot;taxline['code']&quot; t-esc=&quot;taxline['code']&quot;/&gt;&#10;                &lt;span t-att-style=&quot;style&quot; t-esc=&quot;taxline['name']&quot;/&gt;&#10;            &lt;/td&gt;&#10;            &lt;td class=&quot;text-right&quot;&gt;&lt;span t-att-style=&quot;style&quot; t-esc=&quot;taxline['debit']&quot;/&gt;&lt;/td&gt;&#10;            &lt;td class=&quot;text-right&quot;&gt;&lt;span t-att-style=&quot;style&quot; t-esc=&quot;taxline['credit']&quot;/&gt;&lt;/td&gt;&#10;            &lt;td class=&quot;text-right&quot;&gt;&#10;                &lt;span t-att-style=&quot;style&quot; t-esc=&quot;formatLang(taxline['tax_amount'], currency_obj=res_company.currency_id)&quot;/&gt;&#10;            &lt;/td&gt;&#10;        &lt;/tr&gt;        &#10;    &lt;/tbody&gt;&#10;&lt;/table&gt;&#10;" description="Add the main structure of the QWeb Tables" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template name="odoo_search" value="&lt;record id=&quot;view_filter_id&quot; model=&quot;ir.ui.view&quot;&gt;&#10;   &lt;field name=&quot;name&quot;&gt;&lt;/field&gt;&#10;   &lt;field name=&quot;model&quot;&gt;&lt;/field&gt;&#10;   &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &lt;search&gt;&#10;            &lt;field name=&quot;name&quot;/&gt;&#10;            &lt;filter string=&quot;Not Done&quot;&#10;                domain=&quot;[('is_done','=',False)]&quot;/&gt;&#10;            &lt;filter string=&quot;Done&quot;&#10;                domain=&quot;[('is_done','!=',False)]&quot;/&gt;&#10;        &lt;/search&gt;&#10;   &lt;/field&gt;&#10;&lt;/record&gt;&#10;" description="Create Search View" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_kanban" value="&lt;record id=&quot;&quot; model=&quot;ir.ui.view&quot;&gt;&#10; &lt;field name=&quot;name&quot;&gt;&lt;/field&gt;&#10;  &lt;field name=&quot;model&quot;&gt;&lt;/field&gt;&#10; &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;    &lt;kanban&gt;&#10;   &lt;field name=&quot;name&quot;/&gt;&#10; &lt;templates&gt;&#10; &lt;t t-name=&quot;kanban-box&quot;&gt;&#10; &lt;/t&gt;&#10; &lt;/templates&gt;&#10; &lt;/kanban&gt;&#10; &lt;/field&gt;&#10;&lt;/record&gt;" description="Create Kanban View" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_manifest" value="# -*- coding: utf-8 -*-&#10;&#10;{&#10;    'name': '',&#10;    'version': '',&#10;    'summary': '',&#10;    'description':  &quot;&quot;&quot;&#10;        Open Academy module for managing trainings:&#10;            - training courses&#10;            - training sessions&#10;            - attendees registration&#10;    &quot;&quot;&quot;,&#10;    'category': '',&#10;    'author': '',&#10;    'website': '',&#10;    'license': '',&#10;    'depends': ['base'],&#10;    'data': [ 'security/ir.model.access.csv','templates.xml'],&#10;    'demo': ['demo.xml'],&#10;    'installable': True,&#10;    'auto_install': False,&#10;    'external_dependencies': {&#10;        'python': [''],&#10;    },&#10;    'application': True,&#10;}" description="Create Odoo project manifest" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="openerp_import" value="from openerp import models, fields, api, &#10;" description="Add basic Odoo import for old Odoo versions" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_import_model" value="# -*- coding: utf-8 -*-&#10;from odoo import api, fields, models &#10;" description="Add basic Odoo import for new Odoo versions" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_xpath" value="&lt;xpath expr=&quot;//field[@name='name']/header/div&quot; position=&quot;&quot;&gt;&#10;    &lt;!-- Add your fields or attributes here --&gt;&#10;&lt;/xpath&gt;" description="Add the structure of xpath" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_onchange" value="@api.onchange('field_name')&#10;def onchange_method(self):&#10;    self.field_name = ''" description="Add onchange method" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="Python_Class" value="true" />
+    </context>
+  </template>
+  <template name="odoo_xpath_attributes" value="&lt;xpath expr=&quot;//field[@name='']/header/div&quot; position=&quot;attributes&quot;&gt;&#10;    &lt;attribute name=&quot;required&quot;&gt;1&lt;/attribute&gt;&#10;    &lt;attribute name=&quot;readonly&quot;&gt;1&lt;/attribute&gt;&#10;&lt;/xpath&gt;" description="Add the structure of xpath with attributes" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_method_create" value="@api.model&#10;def create(self, values):&#10;    # Add code here&#10;    return super(ClassName, self).create(values)" description="Add a method create" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_method_write" value="@api.multi&#10;def write(self, values):&#10;    # Add code here  &#10;    return super(ClassName, self).write(values)" description="Add a method write" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_button" value="&lt;!-- name: is the identifier for that action --&gt;&#10;&lt;!-- type:  of action it performs --&gt;&#10;&lt;!-- string:  with the text to display on the button --&gt;&#10;&lt;!-- class:  is an optional attribute to apply CSS styles, like in regular HTML --&gt;&#10;&lt;button name=&quot;button_method_name&quot; type=&quot;object&quot; string=&quot;ObjectButton&quot;/&gt;" description="Add Odoo button" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_field" value="&lt;field name=&quot;name&quot;/&gt;" description="Add commun field on view" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_field_state" value="&lt;field name=&quot;state&quot; widget=&quot;statusbar&quot; statusbar_visible=&quot;&quot;/&gt;" description="Add state field with progressbar on view" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_button_box" value="&lt;div class=&quot;oe_button_box&quot; name=&quot;expense_button_box&quot;&gt;&#10;        &lt;button name=&quot;toggle_active&quot; &#10;                type=&quot;object&quot;&#10;                confirm=&quot;(Un)archiving a project automatically (un)archives its tasks and issues. Do you want to proceed?&quot;&#10;                class=&quot;oe_stat_button&quot; &#10;                icon=&quot;fa-archive&quot;&gt;&#10;                &lt;field name=&quot;active&quot; widget=&quot;boolean_button&quot; options='{&quot;terminology&quot;: &quot;archive&quot;}'/&gt;&#10;        &lt;/button&gt;&#10;&lt;/div&gt;" description="Add Button Box on View" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_template" value="&lt;template id=&quot;t_id&quot; inherit_id=&quot;t_inheret_id&quot; name=&quot;t_name&quot; page=&quot;True&quot;&gt;&#10;  &lt;h1&gt;This is an HTML block&lt;/h1&gt;&#10;&lt;/template&gt;" description="Add new Template" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_controller" value="# -*- coding: utf-8 -*-&#10;from odoo import http&#10;&#10;class Openacademy(http.Controller):&#10;    @http.route('/openacademy/openacademy/', auth='public')&#10;    def index(self, **kw):&#10;        return &quot;Hello, world&quot;&#10;&#10;    @http.route('/openacademy/openacademy/objects/', auth='public')&#10;    def list(self, **kw):&#10;        return http.request.render('openacademy.listing', {&#10;            'root': '/openacademy/openacademy',&#10;            'objects': http.request.env['openacademy.openacademy'].search([]),&#10;        })&#10;&#10;    @http.route('/openacademy/openacademy/objects/&lt;model(&quot;openacademy.openacademy&quot;):obj&gt;/', auth='public')&#10;    def object(self, obj, **kw):&#10;        return http.request.render('openacademy.object', {&#10;            'object': obj&#10;        })" description="Create Odoo Controller" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_demo_data" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;odoo&gt;&#10;    &lt;data&gt;&#10;        &lt;!--  --&gt;&#10;        &lt;!--   &lt;record id=&quot;object0&quot; model=&quot;openacademy.openacademy&quot;&gt; --&gt;&#10;        &lt;!--     &lt;field name=&quot;name&quot;&gt;Object 0&lt;/field&gt; --&gt;&#10;        &lt;!--   &lt;/record&gt; --&gt;&#10;        &lt;!--  --&gt;&#10;        &lt;!--   &lt;record id=&quot;object1&quot; model=&quot;openacademy.openacademy&quot;&gt; --&gt;&#10;        &lt;!--     &lt;field name=&quot;name&quot;&gt;Object 1&lt;/field&gt; --&gt;&#10;        &lt;!--   &lt;/record&gt; --&gt;&#10;        &lt;!--  --&gt;&#10;        &lt;!--   &lt;record id=&quot;object2&quot; model=&quot;openacademy.openacademy&quot;&gt; --&gt;&#10;        &lt;!--     &lt;field name=&quot;name&quot;&gt;Object 2&lt;/field&gt; --&gt;&#10;        &lt;!--   &lt;/record&gt; --&gt;&#10;        &lt;!--  --&gt;&#10;        &lt;!--   &lt;record id=&quot;object3&quot; model=&quot;openacademy.openacademy&quot;&gt; --&gt;&#10;        &lt;!--     &lt;field name=&quot;name&quot;&gt;Object 3&lt;/field&gt; --&gt;&#10;        &lt;!--   &lt;/record&gt; --&gt;&#10;        &lt;!--  --&gt;&#10;        &lt;!--   &lt;record id=&quot;object4&quot; model=&quot;openacademy.openacademy&quot;&gt; --&gt;&#10;        &lt;!--     &lt;field name=&quot;name&quot;&gt;Object 4&lt;/field&gt; --&gt;&#10;        &lt;!--   &lt;/record&gt; --&gt;&#10;        &lt;!--  --&gt;&#10;    &lt;/data&gt;&#10;&lt;/odoo&gt;" description="Create demo data" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_encoding" value="# -*- coding: utf-8 -*-" description="Create Odoo encoding" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_init__" value="# -*- coding: utf-8 -*-&#10;from . import controllers&#10;from . import models" description="Create Odoo __init__" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_security_model_access_csv_file" value="id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink&#10;access_openacademy_openacademy,openacademy.openacademy,model_openacademy_openacademy,,1,0,0,0" description="create odoo security model access rules" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="odoo_test_import" value="# -*- coding: utf-8 -*-&#10;from odoo.tests.common import TransactionCase" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_test_model" value="# -*- coding: utf-8 -*-&#10;from odoo.tests.common import TransactionCase&#10;&#10;class NewTest(TransactionCase):&#10;    #most important attribute is _name which is required and defines the name for the model in the Odoo system&#10;    def test_func(self):&#10;        ModelRef = self.env['model.name']&#10;        newRecord = ModelRef.create({'variable' : 'value'})&#10;        self.assertEqual(newRecord.variable, False) " description="Create New Odoo  test model" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_tag_empty" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;odoo&gt;&#10;  &#10;&lt;/odoo&gt;" description="Create the main odoo tags" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_action_window" value=" &lt;!-- Action to open To-do Task list --&gt;&#10;  &lt;act_window id=&quot;action_id&quot;&#10;    name=&quot;action name&quot;&#10;    res_model=&quot;model.identifier&quot;&#10;    view_mode=&quot;tree,form&quot; /&gt;" description="Add new action window" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="odoo_model_ref" value="self.env['model.name']" description="returns model reference" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_model_create_instance" value="ModelReference.create({'variable' : 'value'})" description="creates new model instances" toReformat="false" toShortenFQNames="true" />
+  <template name="odoo_decorator_multi" value="@api.multi&#10;def func_name(self):&#10;    #Self will be the current RecordSet without iteration.&#10;    len(self)&#10;    #the follwoing code shows looping&#10;    for record in self:&#10;        task.is_done = not task.is_done&#10;    &#10;    #The method does not need to return anything, but we should have&#10;    #it to at least return a  True  value. The reason is that clients can use XML-RPC to call these&#10;    #methods, and this protocol does not support server functions returning just a  None  value.&#10;    return True" description="creates new function with multi decorator" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_decorator_model" value="@api.model&#10;def func_name(self):&#10;    # the  self  variable represents the model with no record in particular. &#10;    #We will build a  dones  recordset containing all the tasks that are&#10;    #marked as done. Then, we set the  active  flag to  False  on them.&#10;    &#10;    dones = self.search([('is_done', '=', True)])&#10;    dones.write({'active': False})&#10;    return True" description="creates new model decorated function" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_model_search" value="#self is the model reference&#10;self.search([('is_done', '=', True)])" description="model search api" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_model_write" value="#self represents model reference&#10;#Using  write  here is more efficient than iterating&#10;#through the recordset to assign the value to each of them one by one.&#10;self.write({'active': False})" description="model write api" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="odoo_model_tutorial" value="# -*- coding: utf-8 -*-&#10;from odoo import api, fields, models &#10;&#10;&#10;class NewModule(models.Model):&#10;    _name = 'model.name' # _name is the model identifier and the only required instance variable. &#10;    &#10;    Fields Attributes:&#10;&#10;    The following attributes may be provided when instantiating a field:&#10;    &#10;    1.string:The label of the field seen by users (string); if not set, the ORM takes the field name in the class (capitalized).&#10;    2.help:The tooltip of the field seen by users (string).&#10;    3.readonly:Whether the field is readonly (boolean, by default 'False').&#10;    4.required:Whether the value of the field is required (boolean, by default 'False').&#10;    5.index:Whether the field is indexed in database (boolean, by default 'False').&#10;    6.default:The default value for the field; this is either a static value, or a function taking a recordset and returning a value.          &#10;    7.states:A dictionary mapping state values to lists of UI attribute-value pairs; possible attributes are: 'readonly', 'required', 'invisible'. &#10;    8.Note: Any state-based condition requires the 'state' field value to be available on the &#10;    client-side UI. This is typically done by including it in the relevant views, possibly made invisible if not relevant for the end-user.&#10;    9.groups:Comma-separated list of group xml ids (string); this restricts the field access to the users of the given groups only.&#10;    10.copy: Whether the field value should be copied when the record is duplicated (default: 'True' for normal fields, 'False' for &#10;    'one2many' and computed fields, including property fields and related fields).&#10;    &#10;    &#10;    Incremental definition (Field Inheritance):&#10;&#10;    A field is defined as class attribute on a model class. If the model is extended, one can also extend &#10;    the field definition by redefining a field with the same name and same type on the subclass. In that case, the &#10;    attributes of the field are taken from the parent class and overridden by the ones given in sub-classes.&#10;    For instance, the second class below only adds a tooltip on the field 'state':&#10;&#10;    class First(models.Model):&#10;        _name = 'foo'&#10;        state = fields.Selection([...], required=True)&#10;&#10;    class Second(models.Model):&#10;        _inherit = 'foo'&#10;        state = fields.Selection(help=&quot;Blah blah blah&quot;)&#10;    &#10;    #By default, the field's label (user-visible name) is a capitalized version of the field name,&#10;    this can be overridden with the string parameter:&#10;    &#10;    field2 = fields.Integer(string=&quot;an other field&quot;)&#10;    &#10;    #Default values are defined as parameters on fields, either a value:&#10;&#10;    a_field = fields.Char(default=&quot;a value&quot;)&#10;    #or a function called to compute the default value, which should return that value:&#10;    &#10;    def compute_default_value(self):&#10;        return self.get_value()&#10;    a_field = fields.Char(default=compute_default_value)&#10;        &#10;    &#10;    #Methods defined on a model are executed on a recordset, and their self is a recordset:&#10;    &#10;    def a_method(self):&#10;        # self can be anywhere between 0 records and all records in the database&#10;        self.do_operation()&#10;        &#10;    #Iterating on a recordset will yield new sets of a single record (&quot;singletons&quot;):&#10;    def do_operation(self):&#10;        print self # =&gt; a.model(1, 2, 3, 4, 5)&#10;        for record in self:&#10;            print record # =&gt; a.model(1), then a.model(2), then a.model(3), ...&#10;            &#10;    #Field Access&#10;    &#10;    #each assignment to a field triggers a database update, when setting multiple fields at the same time or setting &#10;    #fields on multiple records (to the same value), use write():&#10;    &#10;    # 3 * len(records) database updates&#10;    for record in records:&#10;        record.a = 1&#10;        record.b = 2&#10;        record.c = 3&#10;    &#10;    # len(records) database updates&#10;    for record in records:&#10;        record.write({'a': 1, 'b': 2, 'c': 3})&#10;    &#10;    # 1 database update&#10;    records.write({'a': 1, 'b': 2, 'c': 3})&#10;    &#10;    #Accessing a relational field (Many2one, One2many, Many2many) always returns a recordset, empty if the field is not set.&#10;&#10;    #Record cache and prefeting&#10;    record.name             # first access reads value from database&#10;    record.name             # second access gets value from cache&#10;    &#10;    #Once a field must be read on a given record, the ORM actually reads that field on a larger recordset, and &#10;    stores the returned values in cache for later use.&#10;    #The prefetched recordset is usually the recordset from which the record comes by iteration. Moreover, all &#10;    simple stored fields (boolean, integer, float, char, text, date, datetime, selection, many2one) are fetched&#10;    altogether; they correspond to the columns of the model's table, and are fetched efficiently in the same query.&#10;    &#10;    #Consider the following example, where partners is a recordset of 1000 records. Without prefetching, the loop would &#10;    make 2000 queries to the database. With prefetching, only one query is made:&#10;    &#10;    for partner in partners:&#10;        print partner.name          # first pass prefetches 'name' and 'lang'&#10;                                    # (and other fields) on all 'partners'&#10;        print partner.lang&#10;        &#10;    #The prefetching also works on secondary records: when relational fields are read, &#10;    their values (which are records) are subscribed for future prefetching. Accessing one of those secondary &#10;    records prefetches all secondary records from the same model.  This makes the following &#10;    #example generate only two queries, one for partners and one for countries:&#10;&#10;    countries = set()&#10;    for partner in partners:&#10;        country = partner.country_id        # first pass prefetches all partners&#10;        countries.add(country.name)         # first pass prefetches all countries    &#10;    &#10;    #Set operations&#10;    #record in set returns whether record (which must be a 1-element recordset) is present in set. record not in set is the inverse operation&#10;    set1 &lt;= set2 and set1 &lt; set2 return whether set1 is a subset of set2 (resp. strict)&#10;    set1 &gt;= set2 and set1 &gt; set2 return whether set1 is a superset of set2 (resp. strict)&#10;    set1 | set2 returns the union of the two recordsets, a new recordset containing all records present in either source&#10;    set1 &amp; set2 returns the intersection of two recordsets, a new recordset containing only records present in both sources&#10;    set1 - set2 returns a new recordset containing only records of set1 which are not in set2&#10;    &#10;    #filtered() returns a recordset containing only records satisfying the provided predicate function. The predicate &#10;    #can also be a string to filter by a field being true or false:&#10;    &#10;    # only keep records whose company is the current user's&#10;    records.filtered(lambda r: r.company_id == user.company_id)&#10;    &#10;    # only keep records whose partner is a company&#10;    records.filtered(&quot;partner_id.is_company&quot;)&#10;    &#10;    #sorted() returns a recordset sorted by the provided key function. If no key is provided, use the model's default sort order:&#10;    &#10;    # sort records by name&#10;    records.sorted(key=lambda r: r.name)&#10;    &#10;    # mapped() applies the provided function to each record in the recordset, returns a recordset if the results are recordsets:&#10;    &#10;    # returns a list of summing two fields for each record in the set&#10;    records.mapped(lambda r: r.field1 + r.field2)&#10;    &#10;    #The provided function can be a string to get field values:&#10;    &#10;    # returns a list of names&#10;    records.mapped('name')&#10;    &#10;    # returns a recordset of partners&#10;    record.mapped('partner_id'&#10;    &#10;    # returns the union of all partner banks, with duplicates removed&#10;    record.mapped('partner_id.bank_ids')&#10;    &#10;    #The Environment stores various contextual data used by the ORM: &#10;    1. the database cursor (for database queries), &#10;    2. the current user (for access rights checking) and &#10;    3. the current context (storing arbitrary metadata). &#10;    4. The environment also stores caches.&#10;&#10;    All recordsets have an environment, which is immutable, can be accessed using env and gives access to the current &#10;    user (user), the cursor (cr) or the context (context):&#10;    &gt;&gt; records.env&#10;    &lt;Environment object ...&gt;&#10;    &gt;&gt;&gt; records.env.user&#10;    res.user(3)&#10;    &gt;&gt;&gt; records.env.cr&#10;    &lt;Cursor object ...)&#10;    &#10;    &gt;&gt; self.env['res.partner']&#10;    res.partner&#10;    &gt;&gt;&gt; self.env['res.partner'].search([['is_company', '=', True], ['customer', '=', True]])&#10;    res.partner(7, 18, 12, 14, 17, 19, 8, 31, 26, 16, 13, 20, 30, 22, 29, 15, 23, 28, 74)&#10;    &#10;    #Altering the environment&#10;    sudo() creates a new environment with the provided user set, uses the administrator if none is provided (to bypass &#10;    access rights/rules in safe contexts), returns a copy of the recordset it is called on using the new environment:&#10;    # create partner object as administrator&#10;    env['res.partner'].sudo().create({'name': &quot;A Partner&quot;})&#10;    &#10;    # list partners visible by the &quot;public&quot; user&#10;    public = env.ref('base.public_user')&#10;    env['res.partner'].sudo(public).search([])&#10;    &#10;    #with_context() can take a single positional parameter, which replaces the current environment's context&#10;    or can take any number of parameters by keyword, which are added to either the current environment's context or the context passed as a parameter&#10;    # look for partner, or create one with specified timezone if none is found&#10;    env['res.partner'].with_context(tz=a_tz).find_or_create(email_address)&#10;    &#10;    with_env() replaces the existing environment entirely&#10;    &#10;    &#10;    #Common ORM methods&#10;    #search() Takes a search domain, returns a recordset of matching records. Can return a subset of matching &#10;    #records (offset and limit parameters) and be ordered (order parameter):&#10;    &#10;    &gt;&gt;&gt; # searches the current model&#10;    &gt;&gt;&gt; self.search([('is_company', '=', True), ('customer', '=', True)])&#10;    res.partner(7, 18, 12, 14, 17, 19, 8, 31, 26, 16, 13, 20, 30, 22, 29, 15, 23, 28, 74)&#10;    &gt;&gt;&gt; self.search([('is_company', '=', True)], limit=1).name&#10;    'Agrolait'&#10;    &#10;    # search_count() returns the number of records which matches a domain&#10;    &#10;    # create() Takes a number of field values, and returns a recordset containing the record created:&#10;    &#10;    &gt;&gt;&gt; self.create({'name': &quot;New Name&quot;})&#10;    res.partner(78)&#10;    &#10;    #write() Takes a number of field values, writes them to all the records in its recordset. Does not return anything:&#10;    self.write({'name': &quot;Newer Name&quot;})&#10;    &#10;    #browse() Takes a database id or a list of ids and returns a recordset, useful when record ids are&#10;    #obtained from outside Odoo (e.g. round-trip through external system) &#10;    &gt;&gt;&gt; self.browse([7, 18, 12])&#10;    res.partner(7, 18, 12)&#10;    &#10;    #exists() Returns a new recordset containing only the records which exist in the database. Can be used &#10;    to check whether a record (e.g. obtained externally) still exists:&#10;    &#10;    if not record.exists():&#10;        raise Exception(&quot;The record has been deleted&quot;)&#10;    &#10;    #or after calling a method which could have removed some records:&#10;    &#10;    records.may_remove_some()&#10;    # only keep records which were not deleted&#10;    records = records.exists()&#10;    &#10;    #ref() Environment method returning the record matching a provided external id:&#10;    &#10;    &gt;&gt;&gt; env.ref('base.group_public')&#10;    res.groups(2)&#10;    &#10;    #ensure_one() checks that the recordset is a singleton (only contains a single record), raises an error otherwise:&#10;&#10;    records.ensure_one()&#10;    # is equivalent to but clearer than:&#10;    assert len(records) == 1, &quot;Expected singleton&quot;&#10;    &#10;    #Computed fields&#10;    #Fields can be computed (instead of read straight from the database) using the compute parameter. It must assign &#10;    #the computed value to the field. If it uses the values of other fields, it should specify those fields using depends():&#10;    &#10;    from odoo import api&#10;    total = fields.Float(compute='_compute_total')&#10;    &#10;    @api.depends('value', 'tax')&#10;    def _compute_total(self):&#10;        for record in self:&#10;            record.total = record.value + record.value * record.tax&#10;    &#10;    #dependencies can be dotted paths when using sub-fields:&#10;    @api.depends('line_ids.value')&#10;    def _compute_total(self):&#10;        for record in self:&#10;            record.total = sum(line.value for line in record.line_ids)&#10;    &#10;    to allow setting values on a computed field, use the inverse parameter. It is the name of a function reversing the computation and setting the relevant fields:&#10;    computed fields are not stored by default, they are computed and returned when requested. Setting store=True will&#10;    store them in the database and automatically enable searching&#10;    searching on a computed field can also be enabled by setting the search parameter. The value is a method name&#10;    returning a Domains:&#10;    &#10;    upper = fields.Char(compute='_compute_upper', inverse='_inverse_upper', search='_search_upper')&#10;&#10;    @api.depends('name')&#10;    def _compute_upper(self):&#10;        for rec in self:&#10;            self.upper = self.name.upper() if self.name else False&#10;&#10;    def _inverse_upper(self):&#10;        for rec in self:&#10;            self.name = self.upper.lower() if self.upper else False&#10;&#10;    def _search_upper(self, operator, value):&#10;        if operator == 'like':&#10;            operator = 'ilike'&#10;        return [('name', operator, value)]&#10;        &#10;    multiple fields can be computed at the same time by the same method, just use the same method on all fields and set all of them:&#10;&#10;    discount_value = fields.Float(compute='_apply_discount')&#10;    total = fields.Float(compute='_apply_discount')&#10;    &#10;    @depends('value', 'discount')&#10;    def _apply_discount(self):&#10;        for record in self:&#10;            # compute actual discount from discount percentage&#10;            discount = record.value * record.discount&#10;            record.discount_value = discount&#10;            record.total = record.value - discount&#10;     &#10;    &#10;    The decorator 'api.depends' must be applied on the compute method to specify the &#10;    field dependencies; those dependencies are used to determine when to recompute the field; re-computation&#10;    is automatic and guarantees cache/database consistency. Note that the same method can be used for several fields,&#10;    you simply have to assign all the given fields in the method; the method will be invoked once for all those fields.&#10;&#10;    By default, a computed field is not stored to the database, and is computed on-the-fly. Adding the attribute &#10;    'store=True' will store the field's values in the database. The advantage of a stored field is that searching on &#10;    that field is done by the database itself. The disadvantage is that it requires database updates when the &#10;    field must be recomputed.&#10;    &#10;    The inverse method, as its name says, does the inverse of the compute method: the invoked records have a value &#10;    for the field, and you must apply the necessary changes on the field dependencies such that the computation gives &#10;    the expected value. Note that a computed field without an inverse method is readonly by default.&#10;    &#10;    The search method is invoked when processing domains before doing an actual search on the model. It must return &#10;    a domain equivalent to the condition: 'field operator value'.&#10;    &#10;    &#10;    Related fields:&#10;&#10;    The value of a related field is given by following a sequence of relational fields and reading a field on the &#10;    reached model. The complete sequence of fields to traverse is specified by the attribute.&#10;&#10;    - related: sequence of field names.&#10;      &#10;    The value of some attributes from related fields are automatically taken from the source field, &#10;    when it makes sense. Examples are the attributes 'string' or 'selection' on selection fields.&#10;&#10;    By default, the values of related fields are not stored to the database. Add the attribute 'store=True' &#10;    to make it stored, just like computed fields. Related fields are automatically recomputed &#10;    when their dependencies are modified.&#10;    &#10;    A special case of computed fields are related (proxy) fields, which provide the value of a sub-field on the current record. They are defined by setting the related parameter and like regular computed fields they can be stored:&#10;&#10;    nickname = fields.Char(related='user_id.partner_id.name', store=True)&#10;    &#10;    New model API:&#10;    There are two styles, namely the &quot;traditional&quot; or old and &quot;record&quot; or new styles.&#10;&#10;    In the &quot;traditional&quot; style, parameters like the database cursor, user id, context dictionary and &#10;    record ids (usually denoted as 'cr', 'uid', 'context', 'ids') are passed explicitly to all methods. In &#10;    the &quot;record&quot; style, those parameters are hidden into model instances, which gives it a more object-oriented feel.&#10;&#10;    For instance, the statements:&#10;&#10;    model = self.pool.get(MODEL)&#10;    ids = model.search(cr, uid, DOMAIN, context=context)&#10;    for rec in model.browse(cr, uid, ids, context=context):&#10;        print rec.name&#10;    model.write(cr, uid, ids, VALUES, context=context)&#10;&#10;    may also be written as:&#10;&#10;    env = Env(cr, uid, context)         # cr, uid, context wrapped in env&#10;    recs = env[MODEL]                   # retrieve an instance of MODEL&#10;    recs = recs.search(DOMAIN)          # search returns a recordset&#10;    for rec in recs:                    # iterate over the records&#10;        print rec.name&#10;    recs.write(VALUES)                  # update all records in recs&#10;&#10;    Methods written in the &quot;traditional&quot; style are automatically decorated, following some heuristics based on parameter names.&#10;    &#10;    &#10;    Decorator's: A decorator is just a callable that takes a function as an argument and returns a replacement function&#10;    &#10;    1. @api.model:&#10;&#10;Decorate a record-style method where 'self' is a recordset, but its contents is not relevant, only the model is. Such a method:&#10;&#10;    @api.model&#10;    def method(self, args):&#10;    &#10;    &#10;    2. @api.one:&#10;&#10;Decorate a record-style method where 'self' is expected to be a singleton instance. The decorated method automatically loops on records, and makes a list with the results. In case the method is decorated with @returns, it concatenates the resulting instances. Such a method:&#10;&#10;    @api.one&#10;    def method(self, args):&#10;        return self.name&#10;        &#10;        3. @api.multi:&#10;&#10;Decorate a record-style method where 'self' is a recordset. The method typically defines an operation on records. Such a method:&#10;&#10;    @api.multi&#10;    def method(self, args):&#10;    &#10;    4. @api.constrains:&#10;&#10;Decorates a constraint checker. Each argument must be a field name used in the check:&#10;&#10;    @api.one&#10;    @api.constrains('name', 'description')&#10;    def _check_description(self):&#10;        if self.name == self.description:&#10;            raise ValidationError(&quot;Fields name and description must be different&quot;)&#10;&#10;Invoked on the records on which one of the named fields has been modified.&#10;&#10;Should raise :class:'~openerp.exceptions.ValidationError' if the validation failed.&#10;&#10;5. @api.onchange:&#10;&#10;Return a decorator to decorate an onchange method for given fields. Each argument must be a field name:&#10;&#10;    @api.onchange('partner_id')&#10;    def _onchange_partner(self):&#10;        self.message = &quot;Dear %s&quot; % (self.partner_id.name or &quot;&quot;)&#10;&#10;In the form views where the field appears, the method will be called when one of the given &#10;fields is modified. The method is invoked on a pseudo-record that contains the values present in the &#10;form. Field assignments on that record are automatically sent back to the client.&#10;&#10;&#10;6. @api.depends:&#10;&#10;Return a decorator that specifies the field dependencies of a &quot;compute&quot; method (for new-style function &#10;fields). Each argument must be a string that consists in a dot-separated sequence of field names:&#10;&#10;    pname = fields.Char(compute='_compute_pname')&#10;&#10;    @api.one&#10;    @api.depends('partner_id.name', 'partner_id.is_company')&#10;    def _compute_pname(self):&#10;        if self.partner_id.is_company:&#10;            self.pname = (self.partner_id.name or &quot;&quot;).upper()&#10;        else:&#10;            self.pname = self.partner_id.name&#10;&#10;One may also pass a single function as argument. In that case, the dependencies are given by calling the function with the field's model.&#10;&#10;7.@api.returns:&#10;&#10;Return a decorator for methods that return instances of 'model'.&#10;&#10;Environment:&#10;&#10;An environment wraps data for ORM records:&#10;&#10; 'cr', the current database cursor.&#10; 'uid', the current user id.&#10; 'context', the current context dictionary.&#10;&#10;It also provides access to the registry, a cache for records, and a data structure to manage re-computations.&#10;&#10;Encapsulates cr, uid, context:&#10;&#10;Accessing the current cursor, user and context:&#10;&#10;#recs.env encapsulates cr, uid, context&#10;recs.env.cr             # shortcut: recs._cr&#10;recs.env.uid           # shortcut: recs._uid&#10;recs.env.context    # shortcut: recs._context&#10;&#10;# recs.env also provides helpers&#10;recs.env.user                              # uid as a record&#10;recs.env.ref('base.group_user')  # resolve xml id&#10;recs.env['res.partner']                # access to new-API model&#10;&#10;Switching Environments:&#10;&#10;1. Switch to new user:&#10;&#10;Returns a new version of this recordset attached to the provided user:&#10;&#10;self.sudo(user.id)&#10;self.sudo()               # This will use the SUPERUSER_ID by default&#10;# or&#10;self.env['res.partner'].sudo().create(vals)&#10;&#10;2. Modifying the context:&#10;&#10;Returns a new version of this recordset attached to an extended context:&#10;&#10;Syntax: with_context([context][, **overrides]) -&gt; records&#10;&#10;The extended context is either the provided 'context' in which 'overrides' are merged or the *current* context in which 'overrides' are merged e.g.:&#10;   &#10;# current context is {'key1': True}&#10;r2 = records.with_context({}, key2=True)&#10;# -&gt; r2._context is {'key2': True}&#10;r2 = records.with_context(key2=True)&#10;# -&gt; r2._context is {'key1': True, 'key2': True}&#10;&#10;3. Switch to new Environment:&#10;&#10;Returns a new version of this recordset attached to the provided environment:&#10;&#10;# rebrowse recs with different parameters&#10;env2 = recs.env(cr2, uid2, context2)&#10;recs2 = recs.with_env(env2)&#10;&#10;Dry Run:&#10;&#10;Environment context manager provides the helper method to perform the action only in caches:&#10;&#10;1. do_in_draft: Context-switch to draft mode, where all field updates are done in cache only.&#10;2. do_in_onchange: Context-switch to 'onchange' draft mode, which is a specialized draft mode used during execution of onchange methods.&#10;   &#10;Invalidate the Environment Caches:&#10;&#10;An Environment maintains multiple caches that are used by the Models/Fields classes.&#10;&#10;In some cases, if you want to invalidate the caches, then you can do:&#10;&#10;self.env.invalidate_all()&#10;&#10;It will clear the cache of all environments.&#10;&#10;Be Careful:&#10;&#10;It is very expensive to use Active Record Pattern while writing the value. As Each assignment will trigger a write action on the database.&#10;&#10;Example:&#10;&#10;@api.one&#10;def method(self):&#10;    self.a = 1&#10;    self.b = 7&#10;    self.c = 8&#10;&#10;On above example each assignment will trigger a write on the database. As the function is decorated with @api.one for each record in  recordset write will be called 3 times. So if you have 'n' numbers of records in recordset, the number of writes will be n*3.&#10;&#10;This may leads to performance bottleneck on heavy task. In that case it is better to use:&#10;&#10;@api.multi&#10;def method(self):&#10;    for record in self:&#10;        record.write({'a': 1, 'b': 7, 'c': 8})&#10;       &#10;or, if you want to write same value on all the records then it is more better to use:&#10;&#10;@api.multi&#10;def method(self):&#10;    self.write({'a':1, 'b': 7, 'c': 8})&#10;&#10;&#10;onchange: updating UI on the fly&#10;When a user changes a field's value in a form (but hasn't saved the form yet), it can be useful to automatically update other fields based on that value e.g. updating a final total when the tax is changed or a new invoice line is added.&#10;&#10;computed fields are automatically checked and recomputed, they do not need an onchange&#10;for non-computed fields, the onchange() decorator is used to provide new field values:&#10;&#10;@api.onchange('field1', 'field2') # if these fields are changed, call method&#10;def check_change(self):&#10;    if self.field1 &lt; self.field2:&#10;        self.field3 = True&#10;the changes performed during the method are then sent to the client program and become visible to the user&#10;&#10;Both computed fields and new-API onchanges are automatically called by the client without having to add them in views&#10;It is possible to suppress the trigger from a specific field by adding on_change=&quot;0&quot; in a view:&#10;&#10;&lt;field name=&quot;name&quot; on_change=&quot;0&quot;/&gt;&#10;will not trigger any interface update when the field is edited by the user, even if there are function fields or explicit onchange depending on that field." description="create new model that explains basic methods and operations" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+</templateSet>
